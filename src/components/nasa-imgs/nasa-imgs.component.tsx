@@ -19,9 +19,9 @@ export const NASAImgs = () => {
   }, []);
 
   return (
-    <div>
-      {imgs.map(img => (
-        <Card img={img.url} key={uuid.v1()} />
+    <div className='NASAImgs'>
+      {imgs.map(data => (
+        <Card data={data} key={uuid.v1()} />
       ))}
     </div>
   );

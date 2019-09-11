@@ -1,0 +1,16 @@
+.Card {
+  height: 450px;
+  width: 550px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+
+  img {
+    max-height: 80%;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  *:not(img) {
+    margin: 10px;
+  }
+}
