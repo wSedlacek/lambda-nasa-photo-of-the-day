@@ -18,6 +18,7 @@ export const NASAImgs = () => {
       .then(res => setImgs(imgs => [...imgs, res.data]));
   }, []);
 
+  if (imgs.length === 0) return <h3 className='loading'>Loading...</h3>;
   return (
     <div className='NASAImgs'>
       {imgs.map(data => (
