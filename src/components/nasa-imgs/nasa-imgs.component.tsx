@@ -5,7 +5,7 @@ import axios from 'axios';
 import * as uuid from 'uuid';
 
 import { NASAImg } from '../../models/NASAImg';
-import { Card } from '../card/card.component';
+import { NASAImgCard } from '../card/card.component';
 import styled from 'styled-components';
 
 const Loading = styled.h3`
@@ -46,7 +46,7 @@ export const NASAImgs = () => {
   return (
     <Grid>
       {imgs.map(data => (
-        <Card data={data} key={uuid.v1()} />
+        <NASAImgCard data={data} key={uuid.v1()} />
       ))}
     </Grid>
   );
