@@ -22,7 +22,10 @@ const CardHost = styled.div`
 export const Card = ({ data }: { data: NASAImg }) => {
   return (
     <CardHost>
-      <img src={data.url.includes('apod.nasa.gov/apod/') ? data.url : 'missing.jpg'}></img>
+      <img
+        src={data.url.includes('apod.nasa.gov/apod/') ? data.url : 'missing.jpg'}
+        alt={data.title}
+      ></img>
       <h2>{data.title}</h2>
       <p>{data.date}</p>
     </CardHost>
