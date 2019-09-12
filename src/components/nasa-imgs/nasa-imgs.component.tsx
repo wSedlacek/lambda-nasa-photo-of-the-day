@@ -1,4 +1,3 @@
-import './nasa-imgs.component.scss';
 import React from 'react';
 import { useEffect, useState } from 'react';
 
@@ -7,6 +6,24 @@ import * as uuid from 'uuid';
 
 import { NASAImg } from '../../models/NASAImg';
 import { Card } from '../card/card.component';
+import styled from 'styled-components';
+
+const Loading = styled.h3`
+  position: absolute;
+  top: calc(50% - 1rem);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+`;
+
+const Grid = styled.div`
+  margin: 0 10px;
+
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr;
+`;
 
 export const NASAImgs = () => {
   const [imgs, setImgs] = useState<NASAImg[]>([]);
@@ -25,12 +42,12 @@ export const NASAImgs = () => {
     }
   }, []);
 
-  if (imgs.length === 0) return <h3 className='loading'>Loading...</h3>;
+  if (imgs.length === 0) return <Loading>Loading...</Loading>;
   return (
-    <div className='NASAImgs'>
+    <Grid>
       {imgs.map(data => (
         <Card data={data} key={uuid.v1()} />
       ))}
-    </div>
+    </Grid>
   );
 };
